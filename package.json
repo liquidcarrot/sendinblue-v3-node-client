@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/luiscarbonell/sendinblue-v3-node-client/issues"
   },
-  "homepage": "https://github.com/luiscarbonell/sendinblue-v3-node-client#readme"
+  "homepage": "https://github.com/luiscarbonell/sendinblue-v3-node-client#readme",
+  "dependencies": {
+    "restify-clients": "^2.0.1"
+  }
 }

@@ -1,5 +1,7 @@
 # sendinblue-v3-node-client
 
+Unofficial SendinBlue V3 API Node.js Client
+
 sendinblue-v3-node-client exposes the entire SendinBlue features via a standardized programmatic interface. Please refer to the full [documentation](https://developers.sendinblue.com) to learn more about official documentation.
 
 This is the wrapper for the API. It implements all the features of the API v3. It supports promises.

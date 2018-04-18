@@ -24,7 +24,13 @@
     "sms",
     "contacts"
   ],
-  "author": "Luis Carbonell",
+  "contributors": [{
+    "name": "Luis Ernesto Carbonell",
+    "email": "luiscarbonell5683@gmail.com"
+  }, {
+    "name": "Christian George Echevarria-Reina",
+    "email": "christian.george.echevarria@gmail.com"
+  }],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/luiscarbonell/sendinblue-v3-node-client/issues"

@@ -25,24 +25,16 @@ npm install sendinblue-v3-node-client --save
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var SibApiV3Sdk = require('sendinblue-v3-node-client');
+let sendinblue = require('sendinblue-v3-node-client');
 
-var defaultClient = SibApiV3Sdk.ApiClient.instance;
+let sib = sendinblue(apiKey)
 
-// Configure API key authorization: api-key
-var apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apiKey.apiKeyPrefix['api-key'] = "Token"
-
-var api = new SibApiV3Sdk.AccountApi()
-api.getAccount().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-
+sib.accounts.get(function(res, obj){
+  if(obj){
+    console.log(obj)
+    } else {
+    console.log(res)
+    }})
 ```
 
 ## Documentation for API Endpoints

@@ -77,7 +77,6 @@ module.exports = function(apiKey) {
       else callback(null, obj)
     })
   }
-  
   sendinblue.resellers.children.delete = function(childAuthKey, callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.del('/v3/reseller/children/' + childAuthKey, function(err, req, res, obj) {
@@ -91,6 +90,59 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.resellers.children.ips = {}
+  
+  sendinblue.resellers.children.ips.associate = function(childAuthKey, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/reseller/children/' + childAuthKey + '/ips/associate', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/reseller/children/' + childAuthKey + '/ips/associate', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.resellers.children.ips.dissociate = function(childAuthKey, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/reseller/children/' + childAuthKey + '/ips/dissociate', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/reseller/children/' + childAuthKey + '/ips/dissociate', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.resellers.children.credits = {}
+  
+  sendinblue.resellers.children.credits.add = function(childAuthKey, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/reseller/children/' + childAuthKey + '/credits/add', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/reseller/children/' + childAuthKey + '/credits/add', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.resellers.children.credits.remove = function(childAuthKey, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/reseller/children/' + childAuthKey + '/credits/remove', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/reseller/children/' + childAuthKey + '/credits/remove', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
   
   return sendinblue
 }

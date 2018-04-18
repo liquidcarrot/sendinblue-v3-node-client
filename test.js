@@ -9,7 +9,14 @@ let lorem = {
     companyName: "Liquid Carrot",
     password: "MagicMike"
   },
-  resellerChildAuthKey: "some_auth_key"
+  resellerChildAuthKey: "some_auth_key",
+  resellerChildCredits: {
+    sms: 0,
+    email: 10
+  },
+  ip: {
+    ip: "255.255.255.255"
+  }
 }
 
 describe('SendInBlue', function() {
@@ -63,6 +70,34 @@ describe('SendInBlue', function() {
   describe('resellers.children.delete', function() {
     it('should not return an error', function() {
       sendinblue.resellers.children.delete(lorem.resellerChildAuthKey, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('resellers.children.ips.associate', function() {
+    it('should not return an error', function() {
+      sendinblue.resellers.children.ips.associate(lorem.resellerChildAuthKey, lorem.ip, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('resellers.children.ips.dissociate', function() {
+    it('should not return an error', function() {
+      sendinblue.resellers.children.ips.dissociate(lorem.resellerChildAuthKey, lorem.ip, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('resellers.children.credits.add', function() {
+    it('should not return an error', function() {
+      sendinblue.resellers.children.credits.add(lorem.resellerChildAuthKey, lorem.resellerChildCredits, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('resellers.children.credits.remove', function() {
+    it('should not return an error', function() {
+      sendinblue.resellers.children.credits.remove(lorem.resellerChildAuthKey, lorem.resellerChildCredits, function(err, obj) {
         expect(err).to.not.exist
       })
     })

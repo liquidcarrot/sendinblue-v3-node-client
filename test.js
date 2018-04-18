@@ -21,6 +21,10 @@ let lorem = {
     ip: "255.255.255.255",
     domain: "http://example.com"
   },
+  processesQuery: {
+    limit: 10,
+    offset: 0
+  },
   sender: {
     name: "Sender Example",
     email: "sender@example.com",
@@ -166,5 +170,27 @@ describe('SendInBlue', function() {
   })
   //==================================
   // END Sender Tests ================
+  //==================================
+  
+  
+  //==================================
+  // Process Tests ===================
+  //==================================
+  describe('processes.all', function() {
+    it('should not return an error', function() {
+      sendinblue.processes.all(lorem.processesQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('processes.get', function() {
+    it('should not return an error', function() {
+      sendinblue.processes.get(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END Process Tests ===============
   //==================================
 })

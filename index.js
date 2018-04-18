@@ -12,8 +12,8 @@ module.exports = function(apiKey) {
   })
   
   let sendinblue = {}
-  sendinblue.accounts = {}
   
+  sendinblue.accounts = {}
   sendinblue.accounts.get = function(callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.get('/v3/account', function(err, req, res, obj) {
@@ -28,8 +28,8 @@ module.exports = function(apiKey) {
   }
   
   sendinblue.resellers = {}
-  sendinblue.resellers.children = {}
   
+  sendinblue.resellers.children = {}
   sendinblue.resellers.children.all = function(callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.get('/v3/reseller/children', function(err, req, res, obj) {
@@ -92,7 +92,6 @@ module.exports = function(apiKey) {
   }
   
   sendinblue.resellers.children.ips = {}
-  
   sendinblue.resellers.children.ips.associate = function(childAuthKey, bodyParams, callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.post('/v3/reseller/children/' + childAuthKey + '/ips/associate', bodyParams, function(err, req, res, obj) {
@@ -119,7 +118,6 @@ module.exports = function(apiKey) {
   }
   
   sendinblue.resellers.children.credits = {}
-  
   sendinblue.resellers.children.credits.add = function(childAuthKey, bodyParams, callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.post('/v3/reseller/children/' + childAuthKey + '/credits/add', bodyParams, function(err, req, res, obj) {
@@ -146,7 +144,6 @@ module.exports = function(apiKey) {
   }
   
   sendinblue.senders = {}
-  
   sendinblue.senders.all = function(queryParams, callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.get('/v3/senders?' + querystring.stringify(queryParams), function(err, req, res, obj) {
@@ -197,7 +194,6 @@ module.exports = function(apiKey) {
   }
   
   sendinblue.senders.ips = {}
-  
   sendinblue.senders.ips.get = function(senderId, callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.get('/v3/senders/' + senderId + '/ips', function(err, req, res, obj) {
@@ -223,6 +219,31 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.processes = {}
+  sendinblue.processes.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/processes?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/processes?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.processes.get = function(processId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/processes/' + processId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/processes/' + processId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
   
   return sendinblue
 }

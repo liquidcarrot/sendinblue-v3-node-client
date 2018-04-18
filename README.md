@@ -2,9 +2,9 @@
 
 Unofficial SendinBlue V3 API Node.js Client
 
-sendinblue-v3-node-client exposes the entire SendinBlue features via a standardized programmatic interface. Please refer to the full [documentation](https://developers.sendinblue.com) to learn more about official documentation.
+sendinblue-v3-node-client exposes the entire SendinBlue features via a standardized programmatic interface. Please refer to the full official [documentation](https://developers.sendinblue.com) to learn more about the official documentation.
 
-This is the wrapper for the API. It implements all the features of the API v3. It supports promises.
+This is an unofficial wrapper for the API. It implements all the features of the API v3. It supports promises and callbacks.
 
 ## Installation
 
@@ -18,58 +18,6 @@ Then install it via:
 
 ```shell
 npm install sendinblue-v3-node-client --save
-```
-
-##### Local development
-
-To use the library locally without publishing to a remote npm registry, first install the dependencies by changing
-into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
-
-```shell
-npm install
-```
-
-Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the following, also from `JAVASCRIPT_CLIENT_DIR`:
-
-```shell
-npm link
-```
-
-Finally, switch to the directory you want to use your sendinblue-v3-node-client from, and run:
-
-```shell
-npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
-```
-
-You should now be able to `require('sendinblue-v3-node-client')` in javascript files from the directory you ran the last
-command above from.
-
-#### git
-#
-If the library is hosted at a git repository, e.g.
-https://github.com/luiscarbonell/sendinblue-v3-node-client
-then install it via:
-
-```shell
-    npm install sendinblue/APIv3-nodejs-library --save
-```
-
-### Webpack Configuration
-
-Using Webpack you may encounter the following error: "Module not found: Error:
-Cannot resolve module", most certainly you should disable AMD loader. Add/merge
-the following section to your webpack config:
-
-```javascript
-module: {
-  rules: [
-    {
-      parser: {
-        amd: false
-      }
-    }
-  ]
-}
 ```
 
 ## Getting Started

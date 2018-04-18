@@ -2,6 +2,7 @@
 
 module.exports = function(apiKey) {
   let clients = require('restify-clients')
+  let querystring = require('querystring')
   
   let client = clients.createJsonClient({
     url: 'https://api.sendinblue.com',
@@ -143,6 +144,85 @@ module.exports = function(apiKey) {
       else callback(null, obj)
     })
   }
+  
+  sendinblue.senders = {}
+  
+  sendinblue.senders.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/senders?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/senders?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.senders.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/senders', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/senders', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.senders.update = function(senderId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/senders/' + senderId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/senders/' + senderId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.senders.delete = function(senderId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/senders/' + senderId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/senders/' + senderId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.senders.ips = {}
+  
+  sendinblue.senders.ips.get = function(senderId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/senders/' + senderId + '/ips', function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/senders/' + senderId + '/ips', function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.senders.ips.all = function(callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/senders/ips', function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/senders/ips', function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
   
   return sendinblue
 }

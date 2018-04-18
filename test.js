@@ -9,13 +9,30 @@ let lorem = {
     companyName: "Liquid Carrot",
     password: "MagicMike"
   },
-  resellerChildAuthKey: "some_auth_key",
+  paramId: "some_param_id",
   resellerChildCredits: {
     sms: 0,
     email: 10
   },
   ip: {
     ip: "255.255.255.255"
+  },
+  senderQuery: {
+    ip: "255.255.255.255",
+    domain: "http://example.com"
+  },
+  processesQuery: {
+    limit: 10,
+    offset: 0
+  },
+  sender: {
+    name: "Sender Example",
+    email: "sender@example.com",
+    ips: {
+      ip: "255.255.255.255",
+      domain: "http://example.com",
+      weight: "1"
+    }
   }
 }
 
@@ -55,54 +72,125 @@ describe('SendInBlue', function() {
   })
   describe('resellers.children.get', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.get(lorem.resellerChildAuthKey, function(err, obj) {
+      sendinblue.resellers.children.get(lorem.paramId, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.update', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.update(lorem.resellerChildAuthKey, lorem.resellerChild, function(err, obj) {
+      sendinblue.resellers.children.update(lorem.paramId, lorem.resellerChild, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.delete', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.delete(lorem.resellerChildAuthKey, function(err, obj) {
+      sendinblue.resellers.children.delete(lorem.paramId, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.ips.associate', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.ips.associate(lorem.resellerChildAuthKey, lorem.ip, function(err, obj) {
+      sendinblue.resellers.children.ips.associate(lorem.paramId, lorem.ip, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.ips.dissociate', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.ips.dissociate(lorem.resellerChildAuthKey, lorem.ip, function(err, obj) {
+      sendinblue.resellers.children.ips.dissociate(lorem.paramId, lorem.ip, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.credits.add', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.credits.add(lorem.resellerChildAuthKey, lorem.resellerChildCredits, function(err, obj) {
+      sendinblue.resellers.children.credits.add(lorem.paramId, lorem.resellerChildCredits, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   describe('resellers.children.credits.remove', function() {
     it('should not return an error', function() {
-      sendinblue.resellers.children.credits.remove(lorem.resellerChildAuthKey, lorem.resellerChildCredits, function(err, obj) {
+      sendinblue.resellers.children.credits.remove(lorem.paramId, lorem.resellerChildCredits, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
   //==================================
   // END Reseller Tests ==============
+  //==================================
+  
+  //==================================
+  // Sender Tests ====================
+  //==================================
+  describe('senders.all', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.all(lorem.senderQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('senders.create', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.create(lorem.sender, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('senders.update', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.update(lorem.paramId, lorem.sender, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('senders.delete', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.delete(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('senders.ips.get', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.ips.get(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('senders.ips.all', function() {
+    it('should not return an error', function() {
+      sendinblue.senders.ips.all(function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END Sender Tests ================
+  //==================================
+  
+  
+  //==================================
+  // Process Tests ===================
+  //==================================
+  describe('processes.all', function() {
+    it('should not return an error', function() {
+      sendinblue.processes.all(lorem.processesQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('processes.get', function() {
+    it('should not return an error', function() {
+      sendinblue.processes.get(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END Process Tests ===============
   //==================================
 })

@@ -245,5 +245,127 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.campaigns = {}
+  sendinblue.campaigns.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/emailCampaigns?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/emailCampaigns?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.get = function(campaignId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/emailCampaigns/' + campaignId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/emailCampaigns/' + campaignId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/emailCampaigns', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/emailCampaigns', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.update = function(campaignId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/emailCampaigns/' + campaignId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/emailCampaigns/' + campaignId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.delete = function(campaignId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/emailCampaigns/' + campaignId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/emailCampaigns/' + campaignId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.send = function(campaignId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/emailCampaigns/' + campaignId + '/sendNow', function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/emailCampaigns/' + campaignId + '/sendNow', function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.test = function(campaignId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/emailCampaigns/' + campaignId + '/sendTest', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/emailCampaigns/' + campaignId + '/sendTest', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.export = function(campaignId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/emailCampaigns/' + campaignId + '/exportRecipients', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/emailCampaigns/' + campaignId + '/exportRecipients', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.report = function(campaignId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/emailCampaigns/' + campaignId + '/sendReport', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/emailCampaigns/' + campaignId + '/sendReport', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.campaigns.status = function(campaignId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/emailCampaigns/' + campaignId + '/status', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/emailCampaigns/' + campaignId + '/status', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
   return sendinblue
 }

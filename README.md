@@ -302,8 +302,8 @@ Method | HTTP request | Description
 
 ## Support and Feedback
 
-Be sure to visit the SendinBlue official [documentation website](https://sendinblue.readme.io/docs) for additional information about their API.
+Be sure to visit the SendinBlue official [documentation website](https://sendinblue.readme.io/docs) for additional information about the official API.
 
 If you find a bug, please post the issue on [Github](https://github.com/luiscarbonell/sendinblue-v3-node-client/issues).
 
-As always, if you need additional assistance, drop SendinBlue a note [here](https://account.sendinblue.com/support).
+If you have any questions or comments, feel free to drop us a note [here](mailto:people@liquidcarrot.io).

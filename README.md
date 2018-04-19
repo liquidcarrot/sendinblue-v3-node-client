@@ -34,45 +34,47 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account.get**](https://developers.sendinblue.com/v3.0/reference#getaccount-7) | **GET** /account | Get your account informations, plans and credits details
-[**addCredits**](docs/ResellerApi.md#addCredits) | **POST** /reseller | Add Email and/or SMS credits to a specific child account
-[**associateIpToChild**](docs/ResellerApi.md#associateIpToChild) | **POST** /reseller | Associate a dedicated IP to the child
-[**createResellerChild**](docs/ResellerApi.md#createResellerChild) | **POST** /reseller | Creates a reseller child
-[**deleteResellerChild**](docs/ResellerApi.md#deleteResellerChild) | **DELETE** /reseller | Deletes a single reseller child based on the childAuthKey supplied
-[**dissociateIpFromChild**](docs/ResellerApi.md#dissociateIpFromChild) | **POST** /reseller | Dissociate a dedicated IP to the child
-[**getChildInfo**](docs/ResellerApi.md#getChildInfo) | **GET** /reseller | Gets the info about a specific child account
+
 [**getResellerChilds**](docs/ResellerApi.md#getResellerChilds) | **GET** /reseller | Gets the list of all reseller&#39;s children accounts
-[**removeCredits**](docs/ResellerApi.md#removeCredits) | **POST** /reseller | Remove Email and/or SMS credits from a specific child account
+[**createResellerChild**](docs/ResellerApi.md#createResellerChild) | **POST** /reseller | Creates a reseller child
+[**getChildInfo**](docs/ResellerApi.md#getChildInfo) | **GET** /reseller | Gets the info about a specific child account
 [**updateResellerChild**](docs/ResellerApi.md#updateResellerChild) | **PUT** /reseller | Updates infos of reseller&#39;s child based on the childAuthKey supplied
-[**createSender**](docs/SendersApi.md#createSender) | **POST** /senders | Create a new sender
-[**deleteSender**](docs/SendersApi.md#deleteSender) | **DELETE** /senders | Delete a sender
+[**deleteResellerChild**](docs/ResellerApi.md#deleteResellerChild) | **DELETE** /reseller | Deletes a single reseller child based on the childAuthKey supplied
+[**associateIpToChild**](docs/ResellerApi.md#associateIpToChild) | **POST** /reseller | Associate a dedicated IP to the child
+[**dissociateIpFromChild**](docs/ResellerApi.md#dissociateIpFromChild) | **POST** /reseller | Dissociate a dedicated IP to the child
+[**addCredits**](docs/ResellerApi.md#addCredits) | **POST** /reseller | Add Email and/or SMS credits to a specific child account
+[**removeCredits**](docs/ResellerApi.md#removeCredits) | **POST** /reseller | Remove Email and/or SMS credits from a specific child account
 [**getIps**](docs/SendersApi.md#getIps) | **GET** /senders | Return all the dedicated IPs for your account
+[**createSender**](docs/SendersApi.md#createSender) | **POST** /senders | Create a new sender
+[**updateSender**](docs/SendersApi.md#updateSender) | **PUT** /senders | Update a sender
+[**deleteSender**](docs/SendersApi.md#deleteSender) | **DELETE** /senders | Delete a sender
 [**getIpsFromSender**](docs/SendersApi.md#getIpsFromSender) | **GET** /senders | Return all the dedicated IPs for a sender
 [**getSenders**](docs/SendersApi.md#getSenders) | **GET** /senders | Get the list of all your senders
-[**updateSender**](docs/SendersApi.md#updateSender) | **PUT** /senders | Update a sender
 [**getProcess**](docs/ProcessApi.md#getProcess) | **GET** /processes | Return the informations for a process
 [**getProcesses**](docs/ProcessApi.md#getProcesses) | **GET** /processes | Return all the processes for your account
-[**createEmailCampaign**](docs/EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
-[**deleteEmailCampaign**](docs/EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns | Delete an email campaign
-[**emailExportRecipients**](docs/EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns | Export the recipients of a campaign
-[**getEmailCampaign**](docs/EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns | Get campaign informations
 [**getEmailCampaigns**](docs/EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created campaigns
-[**sendEmailCampaignNow**](docs/EmailCampaignsApi.md#sendEmailCampaignNow) | **POST** /emailCampaigns | Send an email campaign id of the campaign immediately
-[**sendReport**](docs/EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns | Send the report of a campaigns
-[**sendTestEmail**](docs/EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns | Send an email campaign to your test list
-[**updateCampaignStatus**](docs/EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns | Update a campaign status
+[**getEmailCampaign**](docs/EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns | Get campaign informations
+[**createEmailCampaign**](docs/EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
 [**updateEmailCampaign**](docs/EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns | Update a campaign
-[**createSmtpTemplate**](docs/SMTPApi.md#createSmtpTemplate) | **POST** /smtp | Create an smtp template
-[**deleteHardbounces**](docs/SMTPApi.md#deleteHardbounces) | **POST** /smtp | Delete hardbounces
-[**deleteSmtpTemplate**](docs/SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp | Delete an inactive smtp template
+[**deleteEmailCampaign**](docs/EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns | Delete an email campaign
+[**sendEmailCampaignNow**](docs/EmailCampaignsApi.md#sendEmailCampaignNow) | **POST** /emailCampaigns | Send an email campaign id of the campaign immediately
+[**sendTestEmail**](docs/EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns | Send an email campaign to your test list
+[**emailExportRecipients**](docs/EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns | Export the recipients of a campaign
+[**sendReport**](docs/EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns | Send the report of a campaigns
+[**updateCampaignStatus**](docs/EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns | Update a campaign status
+[**getSmtpReport**](docs/SMTPApi.md#getSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated per day
 [**getAggregatedSmtpReport**](docs/SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated over a period of time
 [**getEmailEventReport**](docs/SMTPApi.md#getEmailEventReport) | **GET** /smtp | Get all your SMTP activity (unaggregated events)
-[**getSmtpReport**](docs/SMTPApi.md#getSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated per day
-[**getSmtpTemplate**](docs/SMTPApi.md#getSmtpTemplate) | **GET** /smtp | Returns the template informations
 [**getSmtpTemplates**](docs/SMTPApi.md#getSmtpTemplates) | **GET** /smtp | Get the list of SMTP templates
-[**sendTemplate**](docs/SMTPApi.md#sendTemplate) | **POST** /smtp | Send a template
-[**sendTestTemplate**](docs/SMTPApi.md#sendTestTemplate) | **POST** /smtp | Send a template to your test list
-[**sendTransacEmail**](docs/SMTPApi.md#sendTransacEmail) | **POST** /smtp | Send a transactional email
+[**createSmtpTemplate**](docs/SMTPApi.md#createSmtpTemplate) | **POST** /smtp | Create an smtp template
+[**getSmtpTemplate**](docs/SMTPApi.md#getSmtpTemplate) | **GET** /smtp | Returns the template informations
 [**updateSmtpTemplate**](docs/SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp | Updates an smtp templates
+[**deleteSmtpTemplate**](docs/SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp | Delete an inactive smtp template
+[**sendTestTemplate**](docs/SMTPApi.md#sendTestTemplate) | **POST** /smtp | Send a template to your test list
+[**sendTemplate**](docs/SMTPApi.md#sendTemplate) | **POST** /smtp | Send a template
+[**sendTransacEmail**](docs/SMTPApi.md#sendTransacEmail) | **POST** /smtp | Send a transactional email
+[**deleteHardbounces**](docs/SMTPApi.md#deleteHardbounces) | **POST** /smtp | Delete hardbounces
+
 [**createWebhook**](docs/WebhooksApi.md#createWebhook) | **POST** /webhooks | Create a webhook
 [**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks | Delete a webhook
 [**getWebhook**](docs/WebhooksApi.md#getWebhook) | **GET** /webhooks | Get a webhook details
@@ -137,160 +139,6 @@ Method | HTTP request | Description
 [**sendTestSms**](docs/SMSCampaignsApi.md#sendTestSms) | **POST** /smsCampaigns | Send an SMS
 [**updateSmsCampaign**](docs/SMSCampaignsApi.md#updateSmsCampaign) | **PUT** /smsCampaigns | Updates an SMS campaign
 [**updateSmsCampaignStatus**](docs/SMSCampaignsApi.md#updateSmsCampaignStatus) | **PUT** /smsCampaigns | Update the campaign status
-
-
-## Documentation for Models
-
- - [AddContactToList](docs/AddContactToList.md)
- - [AddCredits](docs/AddCredits.md)
- - [CreateAttribute](docs/CreateAttribute.md)
- - [CreateAttributeEnumeration](docs/CreateAttributeEnumeration.md)
- - [CreateChild](docs/CreateChild.md)
- - [CreateContact](docs/CreateContact.md)
- - [CreateEmailCampaign](docs/CreateEmailCampaign.md)
- - [CreateEmailCampaignRecipients](docs/CreateEmailCampaignRecipients.md)
- - [CreateEmailCampaignSender](docs/CreateEmailCampaignSender.md)
- - [CreateList](docs/CreateList.md)
- - [CreateModel](docs/CreateModel.md)
- - [CreateReseller](docs/CreateReseller.md)
- - [CreateSender](docs/CreateSender.md)
- - [CreateSenderIps](docs/CreateSenderIps.md)
- - [CreateSenderModel](docs/CreateSenderModel.md)
- - [CreateSmsCampaign](docs/CreateSmsCampaign.md)
- - [CreateSmsCampaignRecipients](docs/CreateSmsCampaignRecipients.md)
- - [CreateSmtpEmail](docs/CreateSmtpEmail.md)
- - [CreateSmtpTemplate](docs/CreateSmtpTemplate.md)
- - [CreateSmtpTemplateSender](docs/CreateSmtpTemplateSender.md)
- - [CreateUpdateFolder](docs/CreateUpdateFolder.md)
- - [CreateWebhook](docs/CreateWebhook.md)
- - [CreatedProcessId](docs/CreatedProcessId.md)
- - [DeleteHardbounces](docs/DeleteHardbounces.md)
- - [EmailExportRecipients](docs/EmailExportRecipients.md)
- - [ErrorModel](docs/ErrorModel.md)
- - [GetAccountMarketingAutomation](docs/GetAccountMarketingAutomation.md)
- - [GetAccountPlan](docs/GetAccountPlan.md)
- - [GetAccountRelay](docs/GetAccountRelay.md)
- - [GetAccountRelayData](docs/GetAccountRelayData.md)
- - [GetAggregatedReport](docs/GetAggregatedReport.md)
- - [GetAttributes](docs/GetAttributes.md)
- - [GetAttributesAttributes](docs/GetAttributesAttributes.md)
- - [GetAttributesEnumeration](docs/GetAttributesEnumeration.md)
- - [GetCampaignOverview](docs/GetCampaignOverview.md)
- - [GetCampaignRecipients](docs/GetCampaignRecipients.md)
- - [GetCampaignStats](docs/GetCampaignStats.md)
- - [GetChildInfoApiKeys](docs/GetChildInfoApiKeys.md)
- - [GetChildInfoApiKeysV2](docs/GetChildInfoApiKeysV2.md)
- - [GetChildInfoApiKeysV3](docs/GetChildInfoApiKeysV3.md)
- - [GetChildInfoCredits](docs/GetChildInfoCredits.md)
- - [GetChildInfoStatistics](docs/GetChildInfoStatistics.md)
- - [GetChildrenList](docs/GetChildrenList.md)
- - [GetClient](docs/GetClient.md)
- - [GetContactCampaignStats](docs/GetContactCampaignStats.md)
- - [GetContactCampaignStatsClicked](docs/GetContactCampaignStatsClicked.md)
- - [GetContactCampaignStatsOpened](docs/GetContactCampaignStatsOpened.md)
- - [GetContactCampaignStatsTransacAttributes](docs/GetContactCampaignStatsTransacAttributes.md)
- - [GetContactCampaignStatsUnsubscriptions](docs/GetContactCampaignStatsUnsubscriptions.md)
- - [GetContactDetails](docs/GetContactDetails.md)
- - [GetContacts](docs/GetContacts.md)
- - [GetEmailCampaigns](docs/GetEmailCampaigns.md)
- - [GetEmailEventReport](docs/GetEmailEventReport.md)
- - [GetEmailEventReportEvents](docs/GetEmailEventReportEvents.md)
- - [GetExtendedCampaignOverviewSender](docs/GetExtendedCampaignOverviewSender.md)
- - [GetExtendedCampaignStats](docs/GetExtendedCampaignStats.md)
- - [GetExtendedCampaignStatsLinksStats](docs/GetExtendedCampaignStatsLinksStats.md)
- - [GetExtendedClientAddress](docs/GetExtendedClientAddress.md)
- - [GetExtendedContactDetailsStatistics](docs/GetExtendedContactDetailsStatistics.md)
- - [GetExtendedContactDetailsStatisticsClicked](docs/GetExtendedContactDetailsStatisticsClicked.md)
- - [GetExtendedContactDetailsStatisticsLinks](docs/GetExtendedContactDetailsStatisticsLinks.md)
- - [GetExtendedContactDetailsStatisticsMessagesSent](docs/GetExtendedContactDetailsStatisticsMessagesSent.md)
- - [GetExtendedContactDetailsStatisticsOpened](docs/GetExtendedContactDetailsStatisticsOpened.md)
- - [GetExtendedContactDetailsStatisticsUnsubscriptions](docs/GetExtendedContactDetailsStatisticsUnsubscriptions.md)
- - [GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription](docs/GetExtendedContactDetailsStatisticsUnsubscriptionsAdminUnsubscription.md)
- - [GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription](docs/GetExtendedContactDetailsStatisticsUnsubscriptionsUserUnsubscription.md)
- - [GetExtendedListCampaignStats](docs/GetExtendedListCampaignStats.md)
- - [GetFolder](docs/GetFolder.md)
- - [GetFolderLists](docs/GetFolderLists.md)
- - [GetFolders](docs/GetFolders.md)
- - [GetIp](docs/GetIp.md)
- - [GetIpFromSender](docs/GetIpFromSender.md)
- - [GetIps](docs/GetIps.md)
- - [GetIpsFromSender](docs/GetIpsFromSender.md)
- - [GetList](docs/GetList.md)
- - [GetLists](docs/GetLists.md)
- - [GetProcess](docs/GetProcess.md)
- - [GetProcesses](docs/GetProcesses.md)
- - [GetReports](docs/GetReports.md)
- - [GetReportsReports](docs/GetReportsReports.md)
- - [GetSendersList](docs/GetSendersList.md)
- - [GetSendersListIps](docs/GetSendersListIps.md)
- - [GetSendersListSenders](docs/GetSendersListSenders.md)
- - [GetSmsCampaignOverview](docs/GetSmsCampaignOverview.md)
- - [GetSmsCampaignStats](docs/GetSmsCampaignStats.md)
- - [GetSmsCampaigns](docs/GetSmsCampaigns.md)
- - [GetSmsEventReport](docs/GetSmsEventReport.md)
- - [GetSmsEventReportEvents](docs/GetSmsEventReportEvents.md)
- - [GetSmtpTemplateOverview](docs/GetSmtpTemplateOverview.md)
- - [GetSmtpTemplateOverviewSender](docs/GetSmtpTemplateOverviewSender.md)
- - [GetSmtpTemplates](docs/GetSmtpTemplates.md)
- - [GetStatsByDomain](docs/GetStatsByDomain.md)
- - [GetTransacAggregatedSmsReport](docs/GetTransacAggregatedSmsReport.md)
- - [GetTransacSmsReport](docs/GetTransacSmsReport.md)
- - [GetTransacSmsReportReports](docs/GetTransacSmsReportReports.md)
- - [GetWebhook](docs/GetWebhook.md)
- - [GetWebhooks](docs/GetWebhooks.md)
- - [ManageIp](docs/ManageIp.md)
- - [PostContactInfo](docs/PostContactInfo.md)
- - [PostContactInfoContacts](docs/PostContactInfoContacts.md)
- - [PostSendFailed](docs/PostSendFailed.md)
- - [PostSendSmsTestFailed](docs/PostSendSmsTestFailed.md)
- - [RemainingCreditModel](docs/RemainingCreditModel.md)
- - [RemainingCreditModelChild](docs/RemainingCreditModelChild.md)
- - [RemainingCreditModelReseller](docs/RemainingCreditModelReseller.md)
- - [RemoveContactFromList](docs/RemoveContactFromList.md)
- - [RemoveCredits](docs/RemoveCredits.md)
- - [RequestContactExport](docs/RequestContactExport.md)
- - [RequestContactImport](docs/RequestContactImport.md)
- - [RequestContactImportNewList](docs/RequestContactImportNewList.md)
- - [RequestSmsRecipientExport](docs/RequestSmsRecipientExport.md)
- - [SendEmail](docs/SendEmail.md)
- - [SendEmailAttachment](docs/SendEmailAttachment.md)
- - [SendReport](docs/SendReport.md)
- - [SendReportEmail](docs/SendReportEmail.md)
- - [SendSms](docs/SendSms.md)
- - [SendSmtpEmail](docs/SendSmtpEmail.md)
- - [SendSmtpEmailAttachment](docs/SendSmtpEmailAttachment.md)
- - [SendSmtpEmailBcc](docs/SendSmtpEmailBcc.md)
- - [SendSmtpEmailCc](docs/SendSmtpEmailCc.md)
- - [SendSmtpEmailReplyTo](docs/SendSmtpEmailReplyTo.md)
- - [SendSmtpEmailSender](docs/SendSmtpEmailSender.md)
- - [SendSmtpEmailTo](docs/SendSmtpEmailTo.md)
- - [SendTemplateEmail](docs/SendTemplateEmail.md)
- - [SendTestEmail](docs/SendTestEmail.md)
- - [SendTestSms](docs/SendTestSms.md)
- - [SendTransacSms](docs/SendTransacSms.md)
- - [UpdateAttribute](docs/UpdateAttribute.md)
- - [UpdateAttributeEnumeration](docs/UpdateAttributeEnumeration.md)
- - [UpdateCampaignStatus](docs/UpdateCampaignStatus.md)
- - [UpdateChild](docs/UpdateChild.md)
- - [UpdateContact](docs/UpdateContact.md)
- - [UpdateEmailCampaign](docs/UpdateEmailCampaign.md)
- - [UpdateEmailCampaignRecipients](docs/UpdateEmailCampaignRecipients.md)
- - [UpdateEmailCampaignSender](docs/UpdateEmailCampaignSender.md)
- - [UpdateList](docs/UpdateList.md)
- - [UpdateSender](docs/UpdateSender.md)
- - [UpdateSmsCampaign](docs/UpdateSmsCampaign.md)
- - [UpdateSmtpTemplate](docs/UpdateSmtpTemplate.md)
- - [UpdateSmtpTemplateSender](docs/UpdateSmtpTemplateSender.md)
- - [UpdateWebhook](docs/UpdateWebhook.md)
- - [GetChildInfo](docs/GetChildInfo.md)
- - [GetExtendedCampaignOverview](docs/GetExtendedCampaignOverview.md)
- - [GetExtendedClient](docs/GetExtendedClient.md)
- - [GetExtendedContactDetails](docs/GetExtendedContactDetails.md)
- - [GetExtendedList](docs/GetExtendedList.md)
- - [GetSmsCampaign](docs/GetSmsCampaign.md)
- - [GetAccount](docs/GetAccount.md)
- - [GetEmailCampaign](docs/GetEmailCampaign.md)
-
 
 ## Documentation for Authorization
 

@@ -520,5 +520,67 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.webhooks = {}
+  sendinblue.webhooks.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/webhooks?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/webhooks?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.webhooks.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/webhooks', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/webhooks', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.webhooks.get = function(webhookId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/webhooks/' + webhookId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/webhooks/' + webhookId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.webhooks.update = function(webhookId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/webhooks/' + webhookId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/webhooks/' + webhookId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.webhooks.delete = function(webhookId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/webhooks/' + webhookId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/webhooks/' + webhookId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
   return sendinblue
 }

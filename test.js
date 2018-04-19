@@ -40,6 +40,9 @@ let lorem = {
     limit: 50,
     offset: 0
   },
+  webhookQuery: {
+    type: "marketing"
+  },
   sender: {
     name: "Sender Example",
     email: "sender@example.com",
@@ -84,6 +87,9 @@ let lorem = {
     replyTo: {
       email: "johndoe@gmail.com"
     }
+  },
+  webhook: {
+    url: "http://example.com"
   }
 }
 
@@ -408,5 +414,47 @@ describe('SendInBlue', function() {
   })
   //==================================
   // END Campaign Tests ==============
+  //==================================
+  
+  //==================================
+  // Webhook Tests ===================
+  //==================================
+  describe('webhooks.all', function() {
+    it('should not return an error', function() {
+      sendinblue.webhooks.all(lorem.webhookQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('webhooks.create', function() {
+    it('should not return an error', function() {
+      sendinblue.webhooks.create(lorem.webhook, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('webhooks.get', function() {
+    it('should not return an error', function() {
+      sendinblue.webhooks.get(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('webhooks.update', function() {
+    it('should not return an error', function() {
+      sendinblue.webhooks.update(lorem.paramId, lorem.webhook, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('webhooks.delete', function() {
+    it('should not return an error', function() {
+      sendinblue.webhooks.delete(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END Webhook Tests ===============
   //==================================
 })

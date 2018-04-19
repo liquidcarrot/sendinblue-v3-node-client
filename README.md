@@ -34,51 +34,51 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account.get**](https://developers.sendinblue.com/v3.0/reference#getaccount-7) | **GET** /account | Get your account informations, plans and credits details
-[**getResellerChilds**](docs/ResellerApi.md#getResellerChilds) | **GET** /reseller | Gets the list of all reseller&#39;s children accounts
-[**createResellerChild**](docs/ResellerApi.md#createResellerChild) | **POST** /reseller | Creates a reseller child
-[**getChildInfo**](docs/ResellerApi.md#getChildInfo) | **GET** /reseller | Gets the info about a specific child account
-[**updateResellerChild**](docs/ResellerApi.md#updateResellerChild) | **PUT** /reseller | Updates infos of reseller&#39;s child based on the childAuthKey supplied
-[**deleteResellerChild**](docs/ResellerApi.md#deleteResellerChild) | **DELETE** /reseller | Deletes a single reseller child based on the childAuthKey supplied
-[**associateIpToChild**](docs/ResellerApi.md#associateIpToChild) | **POST** /reseller | Associate a dedicated IP to the child
-[**dissociateIpFromChild**](docs/ResellerApi.md#dissociateIpFromChild) | **POST** /reseller | Dissociate a dedicated IP to the child
-[**addCredits**](docs/ResellerApi.md#addCredits) | **POST** /reseller | Add Email and/or SMS credits to a specific child account
-[**removeCredits**](docs/ResellerApi.md#removeCredits) | **POST** /reseller | Remove Email and/or SMS credits from a specific child account
-[**getIps**](docs/SendersApi.md#getIps) | **GET** /senders | Return all the dedicated IPs for your account
-[**createSender**](docs/SendersApi.md#createSender) | **POST** /senders | Create a new sender
-[**updateSender**](docs/SendersApi.md#updateSender) | **PUT** /senders | Update a sender
-[**deleteSender**](docs/SendersApi.md#deleteSender) | **DELETE** /senders | Delete a sender
-[**getIpsFromSender**](docs/SendersApi.md#getIpsFromSender) | **GET** /senders | Return all the dedicated IPs for a sender
-[**getSenders**](docs/SendersApi.md#getSenders) | **GET** /senders | Get the list of all your senders
-[**getProcess**](docs/ProcessApi.md#getProcess) | **GET** /processes | Return the informations for a process
-[**getProcesses**](docs/ProcessApi.md#getProcesses) | **GET** /processes | Return all the processes for your account
-[**getEmailCampaigns**](docs/EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created campaigns
-[**getEmailCampaign**](docs/EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns | Get campaign informations
-[**createEmailCampaign**](docs/EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
-[**updateEmailCampaign**](docs/EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns | Update a campaign
-[**deleteEmailCampaign**](docs/EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns | Delete an email campaign
-[**sendEmailCampaignNow**](docs/EmailCampaignsApi.md#sendEmailCampaignNow) | **POST** /emailCampaigns | Send an email campaign id of the campaign immediately
-[**sendTestEmail**](docs/EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns | Send an email campaign to your test list
-[**emailExportRecipients**](docs/EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns | Export the recipients of a campaign
-[**sendReport**](docs/EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns | Send the report of a campaigns
-[**updateCampaignStatus**](docs/EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns | Update a campaign status
-[**getSmtpReport**](docs/SMTPApi.md#getSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated per day
-[**getAggregatedSmtpReport**](docs/SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated over a period of time
-[**getEmailEventReport**](docs/SMTPApi.md#getEmailEventReport) | **GET** /smtp | Get all your SMTP activity (unaggregated events)
-[**getSmtpTemplates**](docs/SMTPApi.md#getSmtpTemplates) | **GET** /smtp | Get the list of SMTP templates
-[**createSmtpTemplate**](docs/SMTPApi.md#createSmtpTemplate) | **POST** /smtp | Create an smtp template
-[**getSmtpTemplate**](docs/SMTPApi.md#getSmtpTemplate) | **GET** /smtp | Returns the template informations
-[**updateSmtpTemplate**](docs/SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp | Updates an smtp templates
-[**deleteSmtpTemplate**](docs/SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp | Delete an inactive smtp template
-[**sendTestTemplate**](docs/SMTPApi.md#sendTestTemplate) | **POST** /smtp | Send a template to your test list
-[**sendTemplate**](docs/SMTPApi.md#sendTemplate) | **POST** /smtp | Send a template
-[**sendTransacEmail**](docs/SMTPApi.md#sendTransacEmail) | **POST** /smtp | Send a transactional email
-[**deleteHardbounces**](docs/SMTPApi.md#deleteHardbounces) | **POST** /smtp | Delete hardbounces
+[**resellers.children.all**](docs/ResellerApi.md#getResellerChilds) | **GET** /reseller | Gets the list of all reseller&#39;s children accounts
+[**resellers.children.create**](docs/ResellerApi.md#createResellerChild) | **POST** /reseller | Creates a reseller child
+[**resellers.children.get**](docs/ResellerApi.md#getChildInfo) | **GET** /reseller | Gets the info about a specific child account
+[**resellers.children.update**](docs/ResellerApi.md#updateResellerChild) | **PUT** /reseller | Updates infos of reseller&#39;s child based on the childAuthKey supplied
+[**resellers.children.delete**](docs/ResellerApi.md#deleteResellerChild) | **DELETE** /reseller | Deletes a single reseller child based on the childAuthKey supplied
+[**resellers.children.ips.associate**](docs/ResellerApi.md#associateIpToChild) | **POST** /reseller | Associate a dedicated IP to the child
+[**resellers.children.ips.dissociate**](docs/ResellerApi.md#dissociateIpFromChild) | **POST** /reseller | Dissociate a dedicated IP to the child
+[**resellers.children.credits.add**](docs/ResellerApi.md#addCredits) | **POST** /reseller | Add Email and/or SMS credits to a specific child account
+[**resellers.children.credits.remove**](docs/ResellerApi.md#removeCredits) | **POST** /reseller | Remove Email and/or SMS credits from a specific child account
+[**senders.all**](docs/SendersApi.md#getIps) | **GET** /senders | Return all the dedicated IPs for your account
+[**senders.create**](docs/SendersApi.md#createSender) | **POST** /senders | Create a new sender
+[**senders.update**](docs/SendersApi.md#updateSender) | **PUT** /senders | Update a sender
+[**senders.delete**](docs/SendersApi.md#deleteSender) | **DELETE** /senders | Delete a sender
+[**senders.ips.get**](docs/SendersApi.md#getIpsFromSender) | **GET** /senders | Return all the dedicated IPs for a sender
+[**senders.ips.all**](docs/SendersApi.md#getSenders) | **GET** /senders | Get the list of all your senders
+[**processes.all**](docs/ProcessApi.md#getProcesses) | **GET** /processes | Return all the processes for your account
+[**processes.get**](docs/ProcessApi.md#getProcess) | **GET** /processes | Return the informations for a process
+[**campaigns.all**](docs/EmailCampaignsApi.md#getEmailCampaigns) | **GET** /emailCampaigns | Return all your created campaigns
+[**campaigns.get**](docs/EmailCampaignsApi.md#getEmailCampaign) | **GET** /emailCampaigns | Get campaign informations
+[**campaigns.create**](docs/EmailCampaignsApi.md#createEmailCampaign) | **POST** /emailCampaigns | Create an email campaign
+[**campaigns.update**](docs/EmailCampaignsApi.md#updateEmailCampaign) | **PUT** /emailCampaigns | Update a campaign
+[**campaigns.delete**](docs/EmailCampaignsApi.md#deleteEmailCampaign) | **DELETE** /emailCampaigns | Delete an email campaign
+[**campaigns.send**](docs/EmailCampaignsApi.md#sendEmailCampaignNow) | **POST** /emailCampaigns | Send an email campaign id of the campaign immediately
+[**campaigns.test**](docs/EmailCampaignsApi.md#sendTestEmail) | **POST** /emailCampaigns | Send an email campaign to your test list
+[**campaigns.export**](docs/EmailCampaignsApi.md#emailExportRecipients) | **POST** /emailCampaigns | Export the recipients of a campaign
+[**campaigns.report**](docs/EmailCampaignsApi.md#sendReport) | **POST** /emailCampaigns | Send the report of a campaigns
+[**campaigns.status**](docs/EmailCampaignsApi.md#updateCampaignStatus) | **PUT** /emailCampaigns | Update a campaign status
+[**smtp.activity.day**](docs/SMTPApi.md#getSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated per day
+[**smtp.activity.custom**](docs/SMTPApi.md#getAggregatedSmtpReport) | **GET** /smtp | Get your SMTP activity aggregated over a period of time
+[**smtp.activity.all**](docs/SMTPApi.md#getEmailEventReport) | **GET** /smtp | Get all your SMTP activity (unaggregated events)
+[**smtp.templates.all**](docs/SMTPApi.md#getSmtpTemplates) | **GET** /smtp | Get the list of SMTP templates
+[**smtp.templates.create**](docs/SMTPApi.md#createSmtpTemplate) | **POST** /smtp | Create an smtp template
+[**smtp.templates.get**](docs/SMTPApi.md#getSmtpTemplate) | **GET** /smtp | Returns the template informations
+[**smtp.templates.update**](docs/SMTPApi.md#updateSmtpTemplate) | **PUT** /smtp | Updates an smtp templates
+[**smtp.templates.delete**](docs/SMTPApi.md#deleteSmtpTemplate) | **DELETE** /smtp | Delete an inactive smtp template
+[**smtp.templates.test**](docs/SMTPApi.md#sendTestTemplate) | **POST** /smtp | Send a template to your test list
+[**smtp.templates.send**](docs/SMTPApi.md#sendTemplate) | **POST** /smtp | Send a template
+[**smtp.transactionals.send**](docs/SMTPApi.md#sendTransacEmail) | **POST** /smtp | Send a transactional email
+[**smtp.hardbounces.delete**](docs/SMTPApi.md#deleteHardbounces) | **POST** /smtp | Delete hardbounces
+[**webhooks.all**](docs/WebhooksApi.md#getWebhooks) | **GET** /webhooks | Get all webhooks
+[**webhooks.create**](docs/WebhooksApi.md#createWebhook) | **POST** /webhooks | Create a webhook
+[**webhooks.get**](docs/WebhooksApi.md#getWebhook) | **GET** /webhooks | Get a webhook details
+[**webhooks.update**](docs/WebhooksApi.md#updateWebhook) | **PUT** /webhooks | Update a webhook
+[**webhooks.delete**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks | Delete a webhook
 
-[**createWebhook**](docs/WebhooksApi.md#createWebhook) | **POST** /webhooks | Create a webhook
-[**deleteWebhook**](docs/WebhooksApi.md#deleteWebhook) | **DELETE** /webhooks | Delete a webhook
-[**getWebhook**](docs/WebhooksApi.md#getWebhook) | **GET** /webhooks | Get a webhook details
-[**getWebhooks**](docs/WebhooksApi.md#getWebhooks) | **GET** /webhooks | Get all webhooks
-[**updateWebhook**](docs/WebhooksApi.md#updateWebhook) | **PUT** /webhooks | Update a webhook
 [**createAttribute**](docs/AttributesApi.md#createAttribute) | **POST** /contacts | Creates contact attribute
 [**deleteAttribute**](docs/AttributesApi.md#deleteAttribute) | **DELETE** /contacts | Deletes an attribute
 [**getAttributes**](docs/AttributesApi.md#getAttributes) | **GET** /contacts | Lists all attributes

@@ -1,23 +1,17 @@
 # sendinblue-v3-node-client
 
-Unofficial SendinBlue V3 API Node.js Client
+The Best Unofficial SendinBlue V3 API Node.js Client
 
-sendinblue-v3-node-client exposes the entire SendinBlue features via a standardized programmatic interface. Please refer to the full official [documentation](https://developers.sendinblue.com) to learn more about the official documentation.
+sendinblue-v3-node-client exposes the entire SendinBlue API. Please refer to the full official [documentation](https://developers.sendinblue.com) to learn more.
 
 This is an unofficial wrapper for the API. It implements all the features of the API v3. It supports promises and callbacks.
 
 ## Installation
 
-### For [Node.js](https://nodejs.org/)
-
-#### npm
-
-The following recommended installation requires [npm](https://npmjs.org/). If you are unfamiliar with npm, see the [npm docs](https://npmjs.org/doc/).
-
-Then install it via:
+If you are unfamiliar with npm, see the [npm docs](https://npmjs.org/doc/).
 
 ```shell
-npm install sendinblue-v3-node-client --save
+npm i -S sendinblue-v3-node-client
 ```
 
 ## Getting Started
@@ -25,16 +19,12 @@ npm install sendinblue-v3-node-client --save
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-let sendinblue = require('sendinblue-v3-node-client');
+let sib = require('sendinblue-v3-node-client')("YOUR_API_KEY")
 
-let sib = sendinblue(apiKey)
-
-sib.accounts.get(function(res, obj){
-  if(obj){
-    console.log(obj)
-    } else {
-    console.log(res)
-    }})
+sib.account.get(function(error, account) {
+  if(error) console.log("Error: ", error)
+  else console.log("Your Account Object: ", account)
+})
 ```
 
 ## Documentation for API Endpoints
@@ -43,7 +33,7 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**accounts.get**](https://developers.sendinblue.com/v3.0/reference#getaccount-7) | **GET** /account | Get your account informations, plans and credits details
+[**account.get**](https://developers.sendinblue.com/v3.0/reference#getaccount-7) | **GET** /account | Get your account informations, plans and credits details
 [**createAttribute**](docs/AttributesApi.md#createAttribute) | **POST** /contacts/attributes/{attributeCategory}/{attributeName} | Creates contact attribute
 [**deleteAttribute**](docs/AttributesApi.md#deleteAttribute) | **DELETE** /contacts/attributes/{attributeCategory}/{attributeName} | Deletes an attribute
 [**getAttributes**](docs/AttributesApi.md#getAttributes) | **GET** /contacts/attributes | Lists all attributes

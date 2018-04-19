@@ -31,6 +31,15 @@ let lorem = {
     limit: 100,
     offset: 0
   },
+  smtpQuery: {
+    startDate: "2018-01-01",
+    endDate: "2018-01-31",
+  },
+  templateQuery: {
+    templateStatus: true,
+    limit: 50,
+    offset: 0
+  },
   sender: {
     name: "Sender Example",
     email: "sender@example.com",
@@ -59,6 +68,22 @@ let lorem = {
   },
   campaignStatus: {
     status: "sent"
+  },
+  template: {
+    sender: {
+      email: "johndoe@gmail.com"
+    },
+    templateName: "Example Template",
+    subject: "Example Template Subject"
+  },
+  transactional: {
+    sender: {
+      email: "johndoe@gmail.com"
+    },
+    to: "magicmike@gmail.com",
+    replyTo: {
+      email: "johndoe@gmail.com"
+    }
   }
 }
 
@@ -286,6 +311,97 @@ describe('SendInBlue', function() {
   describe('campaigns.status', function() {
     it('should not return an error', function() {
       sendinblue.campaigns.status(lorem.paramId, lorem.campaignStatus, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END Campaign Tests ==============
+  //==================================
+  
+  //==================================
+  // Campaign Tests ==================
+  //==================================
+  describe('smtp.activity.day', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.activity.day(lorem.smtpQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.activity.custom', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.activity.custom(lorem.smtpQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.activity.all', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.activity.all(lorem.smtpQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.all', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.all(lorem.templateQuery, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.create', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.create(lorem.template, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.get', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.get(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.update', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.update(lorem.paramId, lorem.template, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.delete', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.delete(lorem.paramId, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.test', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.test(lorem.paramId, lorem.testCampaign, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.templates.send', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.templates.send(lorem.paramId, lorem.testCampaign, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.transactionals.send', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.transactionals.send(lorem.transactional, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  describe('smtp.hardbounces.delete', function() {
+    it('should not return an error', function() {
+      sendinblue.smtp.hardbounces.delete(lorem.smtpQuery, function(err, obj) {
         expect(err).to.not.exist
       })
     })

@@ -367,5 +367,158 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.smtp = {}
+  sendinblue.smtp.activity = {}
+  sendinblue.smtp.activity.day = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/smtp/statistics/reports?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/smtp/statistics/reports?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.activity.custom = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/smtp/statistics/aggregatedReports?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/smtp/statistics/aggregatedReports?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.activity.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/smtp/statistics/events?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/smtp/statistics/events?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.smtp.templates = {}
+  sendinblue.smtp.templates.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/smtp/templates?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/smtp/templates?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/smtp/templates', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/smtp/templates', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.get = function(templateId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/smtp/templates/' + templateId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/smtp/templates/' + templateId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.update = function(templateId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/smtp/templates/' + templateId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/smtp/templates/' + templateId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.delete = function(templateId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/smtp/templates/' + templateId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/smtp/templates/' + templateId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.test = function(templateId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/smtp/templates/' + templateId + '/sendTest', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/smtp/templates/' + templateId + '/sendTest', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.smtp.templates.send = function(templateId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/smtp/templates/' + templateId + '/send', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/smtp/templates/' + templateId + '/send', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.smtp.transactionals = {}
+  sendinblue.smtp.transactionals.send = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/smtp/email', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/smtp/email', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.smtp.hardbounces = {}
+  sendinblue.smtp.hardbounces.delete = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/smtp/deleteHardbounces', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/smtp/deleteHardbounces', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
   return sendinblue
 }

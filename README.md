@@ -34,7 +34,6 @@ All URIs are relative to *https://api.sendinblue.com/v3*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account.get**](https://developers.sendinblue.com/v3.0/reference#getaccount-7) | **GET** /account | Get your account informations, plans and credits details
-
 [**getResellerChilds**](docs/ResellerApi.md#getResellerChilds) | **GET** /reseller | Gets the list of all reseller&#39;s children accounts
 [**createResellerChild**](docs/ResellerApi.md#createResellerChild) | **POST** /reseller | Creates a reseller child
 [**getChildInfo**](docs/ResellerApi.md#getChildInfo) | **GET** /reseller | Gets the info about a specific child account

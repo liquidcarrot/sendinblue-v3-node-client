@@ -1,6 +1,6 @@
 {
   "name": "sendinblue-v3-node-client",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Unofficial Node.js SendInBlue V3 API",
   "main": "index.js",
   "scripts": {

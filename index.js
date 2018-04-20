@@ -13,8 +13,8 @@ module.exports = function(apiKey) {
   
   let sendinblue = {}
   
-  sendinblue.accounts = {}
-  sendinblue.accounts.get = function(callback) {
+  sendinblue.account = {}
+  sendinblue.account.get = function(callback) {
     if (!callback) return new Promise(function(resolve, reject) {
       client.get('/v3/account', function(err, req, res, obj) {
         if (err) reject(err)

@@ -724,4 +724,56 @@ describe('SendInBlue', function() {
   //==================================
   // END Contact Tests ===============
   //==================================
+  
+  //==================================
+  // SMS Tests =======================
+  //==================================
+  models.sms = {}
+  models.sms.send = [{
+    sender: "12345",
+    recipient: "555555555",
+    content: "Example text"
+  }]
+  describe('sms.send', function() {
+    it('should not return an error', function() {
+      sendinblue.sms.send(...models.sms.send, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  models.sms.all = [{
+    days: 10,
+    limit: 10,
+    offset: 0
+  }]
+  describe('sms.all', function() {
+    it('should not return an error', function() {
+      sendinblue.sms.all(...models.sms.all, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  models.sms.custom = [{
+    days: 10
+  }]
+  describe('sms.custom', function() {
+    it('should not return an error', function() {
+      sendinblue.sms.custom(...models.sms.custom, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  models.sms.day = [{
+    days: 10
+  }]
+  describe('sms.day', function() {
+    it('should not return an error', function() {
+      sendinblue.sms.day(...models.sms.day, function(err, obj) {
+        expect(err).to.not.exist
+      })
+    })
+  })
+  //==================================
+  // END SMS Tests ===================
+  //==================================
 })

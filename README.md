@@ -104,6 +104,11 @@ Method | HTTP request | Description
 [**contacts.lists.contacts.remove**]() | **POST** /contacts | Remove existing contacts from a list
 [**contacts.export**]() | **POST** /contacts | Export contacts
 [**contacts.import**]() | **POST** /contacts | Import contacts
+[**contacts.lists.contacts.get**]() | **GET** /contacts | Get the contacts in a list
+[**contacts.lists.contacts.add**]() | **POST** /contacts | Add existing contacts to a list
+[**contacts.lists.contacts.remove**]() | **POST** /contacts | Remove existing contacts from a list
+[**contacts.export**]() | **POST** /contacts | Export contacts
+[**contacts.import**]() | **POST** /contacts | Import contacts
 [**sms.send**]() | **POST** /transactionalSMS | Send the SMS campaign to the specified mobile number
 [**sms.all**]() | **GET** /transactionalSMS | Get all the SMS activity (unaggregated events)
 [**sms.custom**]() | **GET** /transactionalSMS | Get your SMS activity aggregated over a period of time

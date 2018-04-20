@@ -114,14 +114,6 @@ Method | HTTP request | Description
 [**sms.custom**]() | **GET** /transactionalSMS | Get your SMS activity aggregated over a period of time
 [**sms.day**]() | **GET** /transactionalSMS | Get your SMS activity aggregated per day
 
-## Documentation for Authorization
-
-### api-key
-
-- **Type**: API key
-- **API key parameter name**: api-key
-- **Location**: HTTP header
-
 ## Support and Feedback
 
 Be sure to visit the SendinBlue official [documentation website](https://sendinblue.readme.io/docs) for additional information about the official API.

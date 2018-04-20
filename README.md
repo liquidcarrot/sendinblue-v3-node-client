@@ -25,6 +25,14 @@ sib.account.get(function(error, account) {
   if(error) console.log("Error: ", error)
   else console.log("Your Account Object: ", account)
 })
+
+// OR 
+
+sib.account.get().then(function(account) {
+  console.log("Your Account Object: ", account)
+}).catch(function(error) {
+  console.log("Error: ", error)
+})
 ```
 
 ## Documentation for API Endpoints
@@ -108,6 +116,39 @@ Method | HTTP request | Description
 [**sms.all**](https://developers.sendinblue.com/v3.0/reference#getsmsevents-1) | **GET** /transactionalSMS | Get all the SMS activity (unaggregated events)
 [**sms.custom**](https://developers.sendinblue.com/v3.0/reference#gettransacaggregatedsmsreport-1) | **GET** /transactionalSMS | Get your SMS activity aggregated over a period of time
 [**sms.day**](https://developers.sendinblue.com/v3.0/reference#gettransacsmsreport-1) | **GET** /transactionalSMS | Get your SMS activity aggregated per day
+
+## Advanced
+
+Using `path`, `query`, and `body` parameters.
+
+```javascript
+// sib.path.to.endpoint([path_params],[query_params],[body_params],[callback])
+
+// Get all contacts
+sib.contacts.all({
+  limit: 50,  // query_param
+  offset: 0   // query_param
+}, function(error, contacts) {
+  if(error) console.log("Error: ", error)
+  else console.log("All Contacts: ", JSON.stringify(contacts, null, 2))
+})
+
+// Create new contact
+sib.contacts.create({
+  email: "johndoe@gmail.com", // body_param
+}, function(error, newContact) {
+  if(error) console.log("Error: ", error)
+  else console.log("New Contact: ", JSON.stringify(newContact, null, 2))
+})
+
+// Updates a contact
+sib.contacts.update("johndoe%40gmail.com", {
+  emailBlacklisted: true
+}, function(error, newContact) {
+  if(error) console.log("Error: ", error)
+  else console.log("New Contact: ", JSON.stringify(newContact, null, 2))
+})
+```
 
 ## Support and Feedback
 

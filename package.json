@@ -17,6 +17,8 @@
     "in",
     "blue",
     "smtp",
+    "sib",
+    "v3",
     "email-client",
     "sms-client",
     "transactional-email",

@@ -1,6 +1,7 @@
 'use strict'
 let expect = require('chai').expect
-let sendinblue = require('./index')("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")
+let sendinblue = require('./index')("YOUR_API_KEY")
+
 let lorem = {
   resellerChild: {
     email: "johndoe@gmail.com",
@@ -464,61 +465,62 @@ describe('SendInBlue', function() {
   // Contact Tests ===================
   //==================================
   models.contacts = {}
-  models.contacts.all = [{
-    limit: 50,
-    offset: 0
-  }]
   describe('contacts.all', function() {
+    models.contacts.all = [{
+      limit: 50,
+      offset: 0
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.all(...models.contacts.all, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.create = [{
-    email: "johndoe@gmail.com"
-  }]
   describe('contacts.create', function() {
+    models.contacts.create = [{
+      email: "johndoe@gmail.com"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.create(...models.contacts.create, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.get = ["johndoe%40gmail.com"]
   describe('contacts.get', function() {
+    models.contacts.get = ["johndoe%40gmail.com"]
     it('should not return an error', function() {
       sendinblue.contacts.get(...models.contacts.get, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.update = ["johndoe%40gmail.com", {
-    email: "magicmike@gmail.com"
-  }]
   describe('contacts.update', function() {
+    models.contacts.update = ["johndoe%40gmail.com", {
+      email: "magicmike@gmail.com"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.update(...models.contacts.update, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.delete = ["johndoe%40gmail.com"]
   describe('contacts.delete', function() {
+    models.contacts.delete = ["johndoe%40gmail.com"]
     it('should not return an error', function() {
       sendinblue.contacts.delete(...models.contacts.delete, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.statistics = ["johndoe%40gmail.com"]
   describe('contacts.statistics', function() {
+    models.contacts.statistics = ["johndoe%40gmail.com"]
     it('should not return an error', function() {
       sendinblue.contacts.statistics(...models.contacts.statistics, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
+  
   models.contacts.attributes = {}
   describe('contacts.attributes.all', function() {
     it('should not return an error', function() {
@@ -527,194 +529,197 @@ describe('SendInBlue', function() {
       })
     })
   })
-  models.contacts.attributes.create = ["global", "ExampleAttribute", {
-    value: "Blue",
-    type: "text"
-  }]
   describe('contacts.attributes.create', function() {
+    models.contacts.attributes.create = ["global", "ExampleAttribute", {
+      value: "Blue",
+      type: "text"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.attributes.create(...models.contacts.attributes.create, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.attributes.update = ["global", "ExampleAttribute", {
-    value: "Blue",
-    type: "text"
-  }]
   describe('contacts.attributes.update', function() {
+    models.contacts.attributes.update = ["global", "ExampleAttribute", {
+      value: "Blue",
+      type: "text"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.attributes.update(...models.contacts.attributes.update, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.attributes.delete = ["global", "ExampleAttribute"]
   describe('contacts.attributes.delete', function() {
+    models.contacts.attributes.delete = ["global", "ExampleAttribute"]
     it('should not return an error', function() {
       sendinblue.contacts.attributes.delete(...models.contacts.attributes.delete, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
+  
   models.contacts.folders = {}
-  models.contacts.folders.all = [{
-    limit: 10,
-    offset: 0
-  }]
   describe('contacts.folders.all', function() {
+    models.contacts.folders.all = [{
+      limit: 10,
+      offset: 0
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.folders.all(...models.contacts.folders.all, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.folders.create = [{
-    name: "Example Folder"
-  }]
   describe('contacts.folders.create', function() {
+    models.contacts.folders.create = [{
+      name: "Example Folder"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.folders.create(...models.contacts.folders.create, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.folders.get = ["0"]
   describe('contacts.folders.get', function() {
+    models.contacts.folders.get = ["0"]
     it('should not return an error', function() {
       sendinblue.contacts.folders.get(...models.contacts.folders.get, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.folders.update = ["0", {
-    name: "Second Example Folder"
-  }]
   describe('contacts.folders.update', function() {
+    models.contacts.folders.update = ["0", {
+      name: "Second Example Folder"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.folders.update(...models.contacts.folders.update, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.folders.delete = ["0"]
   describe('contacts.folders.delete', function() {
+    models.contacts.folders.delete = ["0"]
     it('should not return an error', function() {
       sendinblue.contacts.folders.delete(...models.contacts.folders.delete, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.folders.lists = ["0", {
-    limit: 10,
-    offset: 0
-  }]
   describe('contacts.folders.lists', function() {
+    models.contacts.folders.lists = ["0", {
+      limit: 10,
+      offset: 0
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.folders.lists(...models.contacts.folders.lists, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
+  
   models.contacts.lists = {}
-  models.contacts.lists.all = [{
-    limit: 10,
-    offset: 0
-  }]
   describe('contacts.lists.all', function() {
+    models.contacts.lists.all = [{
+      limit: 10,
+      offset: 0
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.all(...models.contacts.lists.all, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.create = [{
-    name: "New Example List",
-    folderId: "0"
-  }]
   describe('contacts.lists.create', function() {
+    models.contacts.lists.create = [{
+      name: "New Example List",
+      folderId: "0"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.create(...models.contacts.lists.create, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.get = ["0"]
   describe('contacts.lists.get', function() {
+    models.contacts.lists.get = ["0"]
     it('should not return an error', function() {
       sendinblue.contacts.lists.get(...models.contacts.lists.get, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.update = ["0", {
-    name: "Another Example List",
-    folderId: "1"
-  }]
   describe('contacts.lists.update', function() {
+    models.contacts.lists.update = ["0", {
+      name: "Another Example List",
+      folderId: "1"
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.update(...models.contacts.lists.update, lorem.webhook, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.delete = ["0"]
   describe('contacts.lists.delete', function() {
+    models.contacts.lists.delete = ["0"]
     it('should not return an error', function() {
       sendinblue.contacts.lists.delete(...models.contacts.lists.delete, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
+  
   models.contacts.lists.contacts = {}
-  models.contacts.lists.contacts.get = ["0", {
-    limit: 10,
-    offset: 0
-  }]
   describe('contacts.lists.contacts.get', function() {
+    models.contacts.lists.contacts.get = ["0", {
+      limit: 10,
+      offset: 0
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.contacts.get(...models.contacts.lists.contacts.get, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.contacts.add = ["0", {
-    emails: ["johndoe@gmail.com", "magicmike@gmail.com"]
-  }]
   describe('contacts.lists.contacts.add', function() {
+    models.contacts.lists.contacts.add = ["0", {
+      emails: ["johndoe@gmail.com", "magicmike@gmail.com"]
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.contacts.add(...models.contacts.lists.contacts.add, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.lists.contacts.remove = ["0", {
-    emails: ["johndoe@gmail.com", "magicmike@gmail.com"]
-  }]
   describe('contacts.lists.contacts.remove', function() {
+    models.contacts.lists.contacts.remove = ["0", {
+      emails: ["johndoe@gmail.com", "magicmike@gmail.com"]
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.lists.contacts.remove(...models.contacts.lists.contacts.remove, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.export = [{
-    contactFilter: {
-      "blacklisted": 1
-    }
-  }]
   describe('contacts.export', function() {
+    models.contacts.export = [{
+      contactFilter: {
+        "blacklisted": 1
+      }
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.export(...models.contacts.export, function(err, obj) {
         expect(err).to.not.exist
       })
     })
   })
-  models.contacts.import = [{
-    fileUrl: "http://example.com/contacts.csv",
-    listIds: ["0"]
-  }]
   describe('contacts.import', function() {
+    models.contacts.import = [{
+      fileUrl: "http://example.com/contacts.csv",
+      listIds: ["0"]
+    }]
     it('should not return an error', function() {
       sendinblue.contacts.import(...models.contacts.import, function(err, obj) {
         expect(err).to.not.exist

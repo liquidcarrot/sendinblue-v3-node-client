@@ -582,5 +582,328 @@ module.exports = function(apiKey) {
     })
   }
   
+  sendinblue.contacts = {}
+  sendinblue.contacts.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.get = function(email, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/' + email, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/' + email, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.update = function(email, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/contacts/' + email, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/contacts/' + email, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.delete = function(email, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/contacts/' + email, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/contacts/' + email, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.statistics = function(email, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/' + email + '/campaignStats', function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/' + email + '/campaignStats', function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.contacts.attributes = {}
+  sendinblue.contacts.attributes.all = function(callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/attributes', function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/attributes', function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.attributes.create = function(attributeCategory, attributeName, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.attributes.update = function(attributeCategory, attributeName, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.attributes.delete = function(attributeCategory, attributeName, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/contacts/attributes/' + attributeCategory + '/' + attributeName, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.contacts.folders = {}
+  sendinblue.contacts.folders.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/folders?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/folders?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.folders.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/folders', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/folders', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.folders.get = function(folderId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/folders/' + folderId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/folders/' + folderId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.folders.update = function(folderId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/contacts/folders/' + folderId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/contacts/folders/' + folderId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.folders.delete = function(folderId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/contacts/folders/' + folderId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/contacts/folders/' + folderId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.folders.lists = function(folderId, queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/folders/' + folderId + '/lists?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/folders/' + folderId + '/lists?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.contacts.lists = {}
+  sendinblue.contacts.lists.all = function(queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/lists?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/lists?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.create = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/lists', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/lists', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.get = function(listId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/lists/' + listId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/lists/' + listId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.update = function(listId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.put('/v3/contacts/lists/' + listId, bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.put('/v3/contacts/lists/' + listId, bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.delete = function(listId, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.del('/v3/contacts/lists/' + listId, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.del('/v3/contacts/lists/' + listId, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
+  sendinblue.contacts.lists.contacts = {}
+  sendinblue.contacts.lists.contacts.get = function(listId, queryParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.get('/v3/contacts/lists/' + listId + '/contacts?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.get('/v3/contacts/lists/' + listId + '/contacts?' + querystring.stringify(queryParams), function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.contacts.add = function(listId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/lists/' + listId + '/contacts/add', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/lists/' + listId + '/contacts/add', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.lists.contacts.remove = function(listId, bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/lists/' + listId + '/contacts/remove', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/lists/' + listId + '/contacts/remove', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+    
+  sendinblue.contacts.export = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/export', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/export', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  sendinblue.contacts.import = function(bodyParams, callback) {
+    if (!callback) return new Promise(function(resolve, reject) {
+      client.post('/v3/contacts/import', bodyParams, function(err, req, res, obj) {
+        if (err) reject(err)
+        else resolve(obj)
+      })
+    })
+    else client.post('/v3/contacts/import', bodyParams, function(err, req, res, obj) {
+      if (err) callback(err)
+      else callback(null, obj)
+    })
+  }
+  
   return sendinblue
 }

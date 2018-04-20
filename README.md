@@ -146,7 +146,7 @@ sib.contacts.update("johndoe%40gmail.com", {
   emailBlacklisted: true
 }, function(error, newContact) {
   if(error) console.log("Error: ", error)
-  else console.log("New Contact: ", JSON.stringify(newContact, null, 2))
+  else console.log("Updated Contact: ", JSON.stringify(newContact, null, 2))
 })
 ```
 
